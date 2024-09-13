@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venue Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 10px;
+        }
+        .venue-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .venue-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            width: 280px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .venue-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .venue-details h2 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        .venue-details p {
+            margin: 5px 0;
+        }
+        .book-now {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .book-now:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Venue Booking</h1>
+    </header>
+    <main>
+        <section class="venue-list">
+           {% for each in venues %}
+                <div class="venue-card">
+
+                    <img src="{{ each.image.url }}" >
+                  
+                    <div class="venue-details">
+                        <h2>{{ each.venue_name }}</h2>
+                        <p>Location: <b>{{ each.location }}</b></p>
+                        <p>Capacity: <b>{{ each.capacity }} people</b></p>
+                        <p>Hourly Rate: <b>BDT {{ each.hourly_rate }}</b></p>
+                        <a href="#" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
