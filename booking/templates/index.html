@@ -75,17 +75,17 @@
     </header>
     <main>
         <section class="venue-list">
-           {% for each in venues %}
+           {% for venue in venues %}
                 <div class="venue-card">
 
-                    <img src="{{ each.image.url }}" >
+                    <img src="{{ venue.image.url }}" >
                   
                     <div class="venue-details">
-                        <h2>{{ each.venue_name }}</h2>
-                        <p>Location: <b>{{ each.location }}</b></p>
-                        <p>Capacity: <b>{{ each.capacity }} people</b></p>
-                        <p>Hourly Rate: <b>BDT {{ each.hourly_rate }}</b></p>
-                        <a href="#" class="book-now">Book Now</a>
+                        <h2>{{ venue.venue_name }}</h2>
+                        <p>Location: <b>{{ venue.location }}</b></p>
+                        <p>Capacity: <b>{{ venue.capacity }} people</b></p>
+                        <p>Hourly Rate: <b>BDT {{ venue.hourly_rate }}</b></p>
+                        <a href="{% url 'book_venue' venue.id %}" class="book-now">Book Now</a>
                     </div>
                 </div>
             {% endfor %}

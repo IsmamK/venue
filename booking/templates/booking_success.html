@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Requested Successfully</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           gap:5px
+           
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .summary {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            width: 100%;
+        }
+
+        .button{
+            background-color: #4CAF50;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+           width: 50%;
+        }
+        .button a{
+
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Booking Requested Successfully</h1>
+        <p>Your venue booking request has been received.</p>
+        <p>We will review the details and get in touch with you at the provided contact number to confirm your booking.</p>
+        <div class="summary">
+            <h2>Booking Summary</h2>
+            <p><strong>Customer Name:</strong> {{ booking.customer_name }}</p>
+            <p><strong>Customer Number:</strong> {{ booking.customer_number }}</p>
+            <hr>
+            <p><strong>Venue:</strong> {{ booking.venue.venue_name }}</p>
+            <p><strong>Date:</strong> {{ booking.date }}</p>
+            <p><strong>Start Time:</strong> {{ booking.start_time }}</p>
+            <p><strong>End Time:</strong> {{ booking.end_time }}</p>
+         
+        </div>
+  
+        <div class = "button">
+            <a  href ="{%url 'index'%}">Return to Home</a>
+       </div>
+    </div>
+
+    
+</body>
+</html>
